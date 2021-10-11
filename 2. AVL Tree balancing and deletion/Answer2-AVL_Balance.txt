@@ -1,0 +1,73 @@
+Balancing of AVL Trees:
+
+Balancing of AVL trees can be divided into following 4 types as per their shapes:
+
+Case 1: Left-Straight-Line
+
+a,b,c and d are nodes.
+Here, the unbalance is at node 1. It forms a left straight line.
+Steps : 1 becomes right child of 2 and c detaches from 2 and becomes left child of 1.
+
+         1                                      2 
+        / \                                   /   \
+       2   d       Rotate 1 right            3      1
+      / \          --------------->        /  \    /  \ 
+     3   c                                a    b  c    d
+    / \
+   a   b
+
+
+Case 2: Right-Straight-Line
+
+a,b,c and d are nodes.
+Here, the unbalance is at node 1. It forms a right straight line.
+Steps : 1 becomes left child of 2 and b detaches from 2 and becomes right child of 1.
+
+         1                                           2 
+        / \                                        /   \
+       a   2          Rotate 1 left               1      3
+          / \          --------------->         /  \    /  \ 
+         b   3                                 a    b  c    d
+            / \
+           c   d
+
+
+Case 3: Left-Zigzag
+
+a,b,c and d are nodes.
+Here, the unbalance is at node 1. It forms a Left-Zigzag.
+This is balanced in 2 steps:
+Step 1: First make it a Left-Straight-Line : Move 3 to the place of 2 and make 2 as it's left child. Move c from 3 and make it the right child of 2.
+Step 2: Balance it like usual Left-Straight-Line : 1 becomes right child of 3 and d detaches from 3 and becomes left child of 1.
+
+
+         1                                           1                                       3     
+        / \                                         / \                                    /   \     
+       2   a    Make it Left-Straight-Line         3   a          Rotate 1 right          2      1  
+      / \          -------------------------->    / \            ---------------->       / \    / \        
+     b   3                                       2    d                                 b   c  d   a       
+        / \                                     / \                                                   
+       c   d                                   b   c                                                            
+
+
+Case 4: Right-Zigzag
+
+a,b,c and d are nodes.
+Here, the unbalance is at node 1. It forms a Right-Zigzag.
+This is balanced in 2 steps:
+Step 1: First make it a Right-Straight-Line : Move 3 to the place of 2 and make 2 as it's right child. Move d from 3 and make it the left child of 2.
+Step 2: Balance it like usual Right-Straight-Line : 1 becomes left child of 3 and c detaches from 3 and becomes right child of 1.
+
+
+          1                                           1                                       3     
+        /  \                                         / \                                    /   \     
+       a    2       Make it Right-Straight-Line     a   3             Rotate 1 left        1      2  
+           / \       -------------------------->       / \           ---------------->    / \    / \        
+          3   b                                       c   2                              a   c  d   b       
+         / \                                             / \                                                   
+        c   d                                           d   b                                                            
+
+
+
+
+
